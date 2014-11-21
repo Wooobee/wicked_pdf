@@ -19,7 +19,7 @@ module WickedPdfHelper
   end
 
   def wicked_pdf_image_tag(img, options = {})
-    image_tag "http://altmanndental.de/images#{img}", options
+    image_tag "http://altmanndental.de/images", options
   end
 
   def wicked_pdf_javascript_src_tag(jsfile, options = {})
@@ -48,7 +48,7 @@ module WickedPdfHelper
     end
 
     def wicked_pdf_image_tag(img, options = {})
-      image_tag "http://altmanndental.de/images#{img}", options
+      image_tag "http://altmanndental.de/images", options
     end
 
     def wicked_pdf_javascript_src_tag(jsfile, options = {})
