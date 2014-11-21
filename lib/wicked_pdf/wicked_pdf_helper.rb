@@ -1,3 +1,20 @@
+Skip to content
+ This repository
+Explore
+Gist
+Blog
+Help
+Wooobee Wooobee
+ 
+You don't have any verified emails. We recommend verifying at least one email.
+Email verification helps our support team verify ownership if you lose account access and allows you to receive all the notifications you ask for.
+40  Watch 
+  Star 1,458
+ Fork 270mileszs/wicked_pdf
+ branch: master  wicked_pdf / lib / wicked_pdf / wicked_pdf_helper.rb
+Ben Lamothezonotope 3 days ago use the `wicked_pdf_asset_path` for urls embedded in loaded stylesheets.
+4 contributors David JonesrpoChabBen Lamothe
+136 lines (113 sloc)  4.448 kb RawBlameHistory   
 require 'open-uri'
 
 module WickedPdfHelper
@@ -19,7 +36,7 @@ module WickedPdfHelper
   end
 
   def wicked_pdf_image_tag(img, options = {})
-    image_tag "http://altmanndental.de/images", options
+    image_tag "file:///#{WickedPdfHelper.root_path.join('public', 'images', img)}", options
   end
 
   def wicked_pdf_javascript_src_tag(jsfile, options = {})
@@ -48,7 +65,7 @@ module WickedPdfHelper
     end
 
     def wicked_pdf_image_tag(img, options = {})
-      image_tag "http://altmanndental.de/images", options
+      image_tag wicked_pdf_asset_path(img), options
     end
 
     def wicked_pdf_javascript_src_tag(jsfile, options = {})
@@ -133,3 +150,5 @@ module WickedPdfHelper
 
   end
 end
+Status API Training Shop Blog About
+© 2014 GitHub, Inc. Terms Privacy Security Contact
