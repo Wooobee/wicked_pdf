@@ -50,7 +50,8 @@ module WickedPdfHelper
 
     def wicked_pdf_image_tag(img, options = {})
       puts "number 2"
-      image_tag wicked_pdf_asset_path(img), options
+      image_tag "file:///#{WickedPdfHelper.root_path.join('public', 'images', img)}", options
+      #image_tag wicked_pdf_asset_path(img), options
     end
 
     def wicked_pdf_javascript_src_tag(jsfile, options = {})
