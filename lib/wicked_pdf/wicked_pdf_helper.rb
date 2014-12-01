@@ -19,6 +19,7 @@ module WickedPdfHelper
   end
 
   def wicked_pdf_image_tag(img, options = {})
+    puts "number 1"
     image_tag "file:///#{WickedPdfHelper.root_path.join('public', 'images', img)}", options
   end
 
@@ -48,6 +49,7 @@ module WickedPdfHelper
     end
 
     def wicked_pdf_image_tag(img, options = {})
+      puts "number 2"
       image_tag wicked_pdf_asset_path(img), options
     end
 
@@ -65,9 +67,10 @@ module WickedPdfHelper
 
     def wicked_pdf_asset_path(asset)
       if (pathname = asset_pathname(asset).to_s) =~ URI_REGEXP
-        puts "Here I am"
+        puts "number 4"
         pathname
       else
+        puts "number 3"
         "file:///#{pathname}"
       end
     end
